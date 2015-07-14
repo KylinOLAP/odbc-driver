@@ -71,12 +71,12 @@ eGoodBad    GetTimestampFromString ( const char* pStr, struct tagTIMESTAMP_STRUC
     x = strlen ( pStr );
     const char* p = pStr;
     
-    while ( ( *p != ' ' ) && ( p < val + x ) ) {
+    while ( ( *p != ' ' ) && ( p < pStr + x ) ) {
         p++;
     }
     
-    if ( ( p - val ) != 8 ) {
-        __ODBCPOPMSG ( _ODBCPopMsg ( "Invalid date string for conversion: %s", pStr ) );
+    if ( ( p - pStr ) != 10 || ( x < 19 ) ) {
+        __ODBCPOPMSG ( _ODBCPopMsg ( "Invalid timestamp string for conversion: %s", pStr ) );
         return BAD;
     }
     
