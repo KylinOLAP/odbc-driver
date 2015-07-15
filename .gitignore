@@ -28,4 +28,9 @@
 
 *.opensdf
 *.sdf
+*.log
+*.tlog
+*.pdb
+*.suo
+
 

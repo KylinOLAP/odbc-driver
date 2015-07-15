@@ -503,7 +503,7 @@ RETCODE SQL_API SQLSetStmtAttrW ( SQLHSTMT       pStmt,
             
         case SQL_ATTR_QUERY_TIMEOUT:
             if ( pDataPtr != NULL )
-            { ( ( pODBCStmt ) pStmt )->QryTimeout = * ( ( ULong* ) pDataPtr ); }
+            { ( ( pODBCStmt ) pStmt )->QryTimeout = ( ( ULong ) pDataPtr ); }
             
             break;
             
