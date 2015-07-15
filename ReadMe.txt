@@ -17,26 +17,37 @@ You can obtain these from Microsoft site as a part of Platform SDK or MDAC kit
 List of folders and description:
 ================================
 
-GODBC                  - Root folder containing the workspace. All the projects are part of this single workspace (GODBC.dsw)
+KylinODBC                  - Root folder containing the workspace. All the projects are part of this single workspace
 
-GODBC\TestDll         - Contains a simple ODBC client that can be used to test your driver as well as connect to any ODBC data source. 
+KylinODBC\TestDll         - Contains a simple ODBC client that can be used to test your driver as well as connect to any ODBC data source. 
 
-GODBC\Common           - Contains files which have been used to define some data types.
+KylinODBC\Common           - Shared data types, utiliy tools, etc.
 
-GODBC\Driver           - Contains code for Kylin ODBC driver. Note that the entire functionality has not been implemented but is enough to get you data into most standard ODBC clients like Tableau, Excel, provided you have set up a rest server to serve the query requests. Note that the header file is a very important starting point for understanding this driver.
+KylinODBC\Driver           - Contains code for Kylin ODBC driver. Note that the entire functionality has not been implemented but is enough to get you data into most standard ODBC clients like Tableau, provided you have set up a rest server to serve the query requests. Note that the header file is a very important starting point for understanding this driver.
 
-GODBC\Installer  	- Contains a MSI installer for kylin odbc driver(x86)
+KylinODBC\Installer  	- Contains a MSI installer for kylin odbc driver(x86)
 
-GODBC\Installer(64bit)  - Contains a MSI installer for kylin odbc driver(x64)
+KylinODBC\Installer(64bit)  - Contains a MSI installer for kylin odbc driver(x64)
 
-GODBC\doc
+KylinODBC\doc               - Totorials for ODBC development starters.
 
-Trying it out
-=============
-Please refer to the Kylin wiki page for a tutorial.
+How to compile
+================================
+1. Get a windows PC with Microsoft Visual Studio 2012 installed. Additionaly install Microsoft Data Access Components (MDAC, http://www.microsoft.com/en-us/download/details.aspx?id=21995) on it.
+
+2. Download source code for zlib(for compression) and Casablanca(for REST invoking), and build them to static libaries. Remember if you want to build 64 bit odbc driver, you'll have to build 64 bit dependency libaries, the same goes for 32 bit 
+
+		Compiling zlib: refer to http://www.helyar.net/2010/compiling-zlib-lib-on-windows/ or http://blog.sina.com.cn/s/blog_6e0693f70100sjgj.html(this doc is in Chineses, but it's quite clear)
+		
+		Compliling Casablanca: refer to https://katyscode.wordpress.com/2014/04/01/how-to-statically-link-the-c-rest-sdk-casablanca
+
+3. Go to "Control Panel" -> "System" -> "Advanced system settings" -> "Environment Variables" -> "System variables", add two variables "ZLIB_HOME" and "CPPREST_HOME", their value being set to the home directory of zlib and Casablanca.
+
+4. Open KylinODBC.sln, if you're building a 32 bit ODBC driver, set the profile to RELEASE|Win32, build project Installer and find the driver exe at Installer/Express/SingleImage/DiskImages/DISK1. If you're building a 64 bit driver, set the profile to RELEASE|x64, and find the exe at Installer(x64bit)/Express/SingleImage/DiskImages/DISK1.
+
 
 
 all the best
 
 Hongbin Ma
-honma@ebay.com
+mahongbin@apache.org
