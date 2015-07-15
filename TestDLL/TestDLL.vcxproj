@@ -78,7 +78,7 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <ModuleDefinitionFile>
       </ModuleDefinitionFile>
-      <AdditionalDependencies>$(SolutionDir)\Common\$(Platform)\$(Configuration)\Common.lib;$(SolutionDir)\Driver\$(Platform)\$(Configuration)\driver.lib;C:\GitWorkspace\cpprest\Binaries\Win32\Debug\cpprest110d_2_0.lib;winhttp.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib</AdditionalDependencies>
+      <AdditionalDependencies>$(SolutionDir)\Common\$(Platform)\$(Configuration)\Common.lib;$(SolutionDir)\Driver\$(Platform)\$(Configuration)\driver.lib;$(CPPREST_HOME)\Binaries\Win32\Debug\cpprest110d_2_0.lib;winhttp.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -98,7 +98,7 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalDependencies>$(SolutionDir)\Common\$(Platform)\$(Configuration)\Common.lib;$(SolutionDir)\Driver\$(Platform)\$(Configuration)\driver.lib;C:\GitWorkspace\cpprest\Binaries\Win32\Release\cpprest110_2_0.lib;winhttp.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib</AdditionalDependencies>
+      <AdditionalDependencies>$(SolutionDir)\Common\$(Platform)\$(Configuration)\Common.lib;$(SolutionDir)\Driver\$(Platform)\$(Configuration)\driver.lib;$(CPPREST_HOME)\Binaries\Win32\Release\cpprest110_2_0.lib;winhttp.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
