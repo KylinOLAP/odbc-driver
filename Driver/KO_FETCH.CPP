@@ -523,6 +523,7 @@ RETCODE SQL_API SQLRowCount ( HSTMT pStmt, SQLLEN* pDataPtr ) {
 // -----------------------------------------------------------------------
 
 RETCODE SQL_API SQLFetch ( HSTMT pStmt ) {
+    __ODBCLOG ( _ODBCLogMsg ( LogLevel_DEBUG, "SQLFetch called" ) );
     __CHK_HANDLE ( pStmt, SQL_HANDLE_STMT, SQL_ERROR );
     // free diags
     _SQLFreeDiag ( _DIAGSTMT ( pStmt ) );
@@ -542,6 +543,7 @@ RETCODE SQL_API SQLFetch ( HSTMT pStmt ) {
         __ODBCLOG ( _ODBCLogMsg ( LogLevel_INFO, "Last row of current query has been fetched" ) );
     }
     
+    __ODBCLOG ( _ODBCLogMsg ( LogLevel_DEBUG, "SQLFetch exiting" ) );
     return ret;
 }
 
